@@ -23,6 +23,8 @@ const App = () => {
       <div>
         <Navbar expand="lg" style={navbarStyle} className="text-white">
           <Container fluid>
+          <img class=" img-logo" src="/logo.png " alt="Grow Business Corporation"></img>
+
             <Navbar.Brand
               as={Link}
               to="/home"
