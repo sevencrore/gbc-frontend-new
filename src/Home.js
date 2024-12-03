@@ -38,7 +38,7 @@ const Home = () => {
             </p>
             <Link to="/create-business">
               <Button
-                className="btn-lg mt-3 animate__animated animate__fadeInUp shadow"
+                className="btn-danger"
                 style={{ backgroundColor: '#ff3333' }}
               >
                 Create New Business
