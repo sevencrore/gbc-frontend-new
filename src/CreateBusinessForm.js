@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, Form, Row, Col, Table } from 'react-bootstrap';
+import { Button, Container, Form, Row, Col, Table, Modal } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css';
 
@@ -18,11 +18,18 @@ const CreateBusinessForm = () => {
   const [location, setLocation] = useState('');
   const [contactDetails, setContactDetails] = useState('');
   const [prospectiveBuyers, setProspectiveBuyers] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (prospectiveBuyers.length === 0) {
+      alert('Please add at least one prospective buyer.');
+      return;
+    }
+
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/business', {
         business_name: businessName,
@@ -49,11 +56,17 @@ const CreateBusinessForm = () => {
   };
 
   const handleAddProspectiveBuyer = () => {
+    if (!companyName.trim() || !location.trim()) {
+      alert('Company Name and Location are required.');
+      return;
+    }
+
     const newBuyer = { companyName, location, contactDetails };
     setProspectiveBuyers((prev) => [...prev, newBuyer]);
     setCompanyName('');
     setLocation('');
     setContactDetails('');
+    setShowModal(false); // Close modal after adding
   };
 
   const handleDeleteProspectiveBuyer = (index) => {
@@ -157,46 +170,11 @@ const CreateBusinessForm = () => {
         </Row>
 
         <h4 className="mb-3">Prospective Buyers List</h4>
-        <Row className="mb-3">
-          <Form.Group as={Col} xs={12} md={6} controlId="companyName">
-            <Form.Label>Company Name*</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter company name"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group as={Col} xs={12} md={6} controlId="location">
-            <Form.Label>Location*</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter location"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-            />
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Form.Group as={Col} xs={12} controlId="contactDetails">
-            <Form.Label>Contact Details</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Enter contact details"
-              value={contactDetails}
-              onChange={(e) => setContactDetails(e.target.value)}
-            />
-          </Form.Group>
-        </Row>
-        <Button
-          variant="primary"
-          className="mb-3"
-          onClick={handleAddProspectiveBuyer}
-        >
+        <Button variant="primary" onClick={() => setShowModal(true)}>
           Add Prospective Buyer
         </Button>
 
-        <Table striped bordered hover>
+        <Table striped bordered hover className="mt-3">
           <thead>
             <tr>
               <th>Company Name</th>
@@ -224,12 +202,58 @@ const CreateBusinessForm = () => {
           </tbody>
         </Table>
 
-        <Button variant="success" type="submit">
+        <Button variant="success" type="submit" className="mt-3">
           Submit Business
         </Button>
       </Form>
+
+      {/* Modal for adding prospective buyers */}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Prospective Buyer</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group controlId="companyName">
+              <Form.Label>Company Name*</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter company name"
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="location" className="mt-3">
+              <Form.Label>Location*</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="contactDetails" className="mt-3">
+              <Form.Label>Contact Details</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter contact details"
+                value={contactDetails}
+                onChange={(e) => setContactDetails(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleAddProspectiveBuyer}>
+            Add Buyer
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
 
-export default CreateBusinessForm;
+export default CreateBusinessForm
