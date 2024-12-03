@@ -22,19 +22,19 @@ const Home = () => {
       >
 
         <Container>
-        <img
+          <img
             className="img-logo imgmain mb-5"
             src="/logo.png"
             alt="Grow Business Corporation"
-           
+
           />
 
-          <div className="p-5 rounded" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+          <div className="p-5 rounded" >
             <h1 className="display-3 fw-bold animate__animated animate__bounceInDown text-shadow">
               Welcome to Grow Business Corporation
             </h1>
             <p className="lead animate__animated animate__fadeInUp text-shadow">
-              Easily manage your businesses with our intuitive platform.
+              <strong>Easily manage your businesses with our intuitive platform.</strong>
             </p>
             <Link to="/create-business">
               <Button
@@ -49,11 +49,11 @@ const Home = () => {
       </div>
 
       {/* About Us and Contact Section */}
-      <Container className="py-5">
+      <Container className="py-3">
         <Row className="justify-content-center">
           {/* About Us Section */}
-          <Col xs={12} md={12} className="mb-4">
-            <Card className="shadow-sm">
+          <Col xs={12} md={6} className="mb-4">
+            <Card className="about-us-container h-100">
               <Card.Body>
                 <h2 className="fw-bold text-center mb-3" style={{ color: '#ff3333' }}>About Us</h2>
                 <p style={{ textAlign: 'justify', lineHeight: 1.8 }}>
@@ -66,6 +66,17 @@ const Home = () => {
                 </p>
               </Card.Body>
             </Card>
+          </Col>
+
+          {/* Image Section */}
+          <Col xs={12} md={6} className="mb-4 d-flex justify-content-center align-items-center">
+            <div className="rounded-image-container">
+              <img
+                src="/besideAboutUS.jpeg" /* Replace with the actual image path */
+                alt="About Us"
+                className="img-fluid rounded shadow"
+              />
+            </div>
           </Col>
         </Row>
       </Container>

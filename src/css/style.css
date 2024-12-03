@@ -33,3 +33,20 @@
     width : 20%;
 }
 
+
+.rounded-image-container img {
+    max-height: 100%; /* Prevents the image from exceeding the height of the container */
+    max-width: 100%; /* Maintains the aspect ratio */
+    border-radius: 20px; /* Rounded corners */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border: none; /* Removes any border */
+    box-shadow: none; /* Removes the shadow */
+  }
+  
+  .about-us-container {
+    border-radius: 20px; /* Rounded corners */
+    border: none; /* Removes border */
+    box-shadow: none; /* Removes shadow */
+    padding: 20px; /* Optional: Add some padding for better spacing */
+  }
+  
