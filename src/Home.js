@@ -84,25 +84,34 @@ const Home = () => {
       {/* Contact Section */}
       {/* <Col xs={12} md={12}> */}
       <Card className="shadow-sm text-white" style={{ backgroundColor: '#343a4b' }}>
-        <Card.Body>
-          <h3 className="fw-bold mb-3 text-center">Contact Us</h3>
-          <div className="mb-2 d-flex align-items-center justify-content-center">
-            <p className="mb-0">Location: #60, 3rd Floor, Galaxy Mall, J C Nagar, Hubli-580021</p>
-          </div>
-          <div className="mb-2 d-flex align-items-center justify-content-center">
-            <i className="bi bi-telephone-fill me-2"></i>
-            <a href="tel:9880213311" className="text-white text-decoration-none">
-              9880213311
-            </a>
-          </div>
-          <div className="mb-0 d-flex align-items-center justify-content-center">
-            <i className="bi bi-envelope-fill me-2"></i>
-            <a href="mailto:grow24.co@gmail.com" className="text-white text-decoration-none">
-              grow24.co@gmail.com
-            </a>
-          </div>
-        </Card.Body>
-      </Card>
+  <Card.Body>
+    <h3 className="fw-bold mb-3 text-center">Contact Us</h3>
+
+    {/* Location Information */}
+    <div className="mb-2 d-flex align-items-center justify-content-center flex-column flex-sm-row">
+      <p className="mb-0">
+        Location: #60, 3rd Floor, Galaxy Mall, J C Nagar, Hubli-580021
+      </p>
+    </div>
+
+    {/* Phone Number */}
+    <div className="mb-2 d-flex align-items-center justify-content-center flex-column flex-sm-row">
+      <i className="bi bi-telephone-fill me-2"></i>
+      <a href="tel:9880213311" className="text-white text-decoration-none">
+        9880213311
+      </a>
+    </div>
+
+    {/* Email Address */}
+    <div className="mb-0 d-flex align-items-center justify-content-center flex-column flex-sm-row">
+      <i className="bi bi-envelope-fill me-2"></i>
+      <a href="mailto:grow24.co@gmail.com" className="text-white text-decoration-none">
+        grow24.co@gmail.com
+      </a>
+    </div>
+  </Card.Body>
+</Card>
+
       {/* </Col> */}
 
     </>

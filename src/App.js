@@ -46,19 +46,7 @@ const App = () => {
                 >
                   Home
                 </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/register"
-                  
-                >
-                  Register
-                </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/login"
-                >
-                  Login
-                </Nav.Link>
+        
                 <Nav.Link
                   as={Link}
                   to="/create-business"
@@ -66,13 +54,7 @@ const App = () => {
                 >
                   Create Business
                 </Nav.Link>
-                <Nav.Link
-                  as={Link}
-                  to="/list"
-                  
-                >
-                  Business List
-                </Nav.Link>
+        
               </Nav>
             </Navbar.Collapse>
           </Container>

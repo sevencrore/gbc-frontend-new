@@ -50,3 +50,20 @@
     padding: 20px; /* Optional: Add some padding for better spacing */
   }
   
+
+
+  /* For mobile screens */
+@media (max-width: 768px) {
+    /* Reduce height of the background image */
+    .imgmain{
+        height : 50%;
+        width : 50%;
+        margin-bottom: 20px;
+    }
+    
+  }
+
+  .navbar-toggler{
+    background-color: white;
+  }
+  
