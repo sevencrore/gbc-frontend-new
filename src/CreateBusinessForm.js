@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import {
-  Button,
-  Container,
-  Form,
-  Row,
-  Col,
-  Table,
-} from 'react-bootstrap';
+import { Button, Container, Form, Row, Col, Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'animate.css';
 
@@ -73,7 +66,7 @@ const CreateBusinessForm = () => {
       <Form onSubmit={handleSubmit}>
         <h4 className="mb-3">Business Info</h4>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="businessName">
+          <Form.Group as={Col} xs={12} md={6} controlId="businessName">
             <Form.Label>Business Name*</Form.Label>
             <Form.Control
               type="text"
@@ -85,7 +78,7 @@ const CreateBusinessForm = () => {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="city">
+          <Form.Group as={Col} xs={12} md={6} controlId="city">
             <Form.Label>City*</Form.Label>
             <Form.Control
               type="text"
@@ -95,7 +88,7 @@ const CreateBusinessForm = () => {
               required
             />
           </Form.Group>
-          <Form.Group as={Col} controlId="address">
+          <Form.Group as={Col} xs={12} md={6} controlId="address">
             <Form.Label>Address*</Form.Label>
             <Form.Control
               type="text"
@@ -107,8 +100,8 @@ const CreateBusinessForm = () => {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="website">
-            <Form.Label>Website*</Form.Label>
+          <Form.Group as={Col} xs={12} md={6} controlId="website">
+            <Form.Label>Website</Form.Label>
             <Form.Control
               type="text"
               placeholder="http://www.example.com"
@@ -116,8 +109,8 @@ const CreateBusinessForm = () => {
               onChange={(e) => setWebsite(e.target.value)}
             />
           </Form.Group>
-          <Form.Group as={Col} controlId="keywords">
-            <Form.Label>Products and Services*</Form.Label>
+          <Form.Group as={Col} xs={12} md={6} controlId="keywords">
+            <Form.Label>Products and Services</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter products or services"
@@ -130,7 +123,7 @@ const CreateBusinessForm = () => {
 
         <h4 className="mb-3">Contact Person Info</h4>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="contactPersonName">
+          <Form.Group as={Col} xs={12} md={6} controlId="contactPersonName">
             <Form.Label>Contact Person Name*</Form.Label>
             <Form.Control
               type="text"
@@ -140,7 +133,7 @@ const CreateBusinessForm = () => {
               required
             />
           </Form.Group>
-          <Form.Group as={Col} controlId="contactPhoneNumber">
+          <Form.Group as={Col} xs={12} md={6} controlId="contactPhoneNumber">
             <Form.Label>Contact Phone Number*</Form.Label>
             <Form.Control
               type="text"
@@ -152,21 +145,20 @@ const CreateBusinessForm = () => {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="contactPersonEmail">
-            <Form.Label>Contact Person Email*</Form.Label>
+          <Form.Group as={Col} xs={12} controlId="contactPersonEmail">
+            <Form.Label>Contact Person Email</Form.Label>
             <Form.Control
               type="email"
               placeholder="Enter email"
               value={contactPersonEmail}
               onChange={(e) => setContactPersonEmail(e.target.value)}
-              required
             />
           </Form.Group>
         </Row>
 
         <h4 className="mb-3">Prospective Buyers List</h4>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="companyName">
+          <Form.Group as={Col} xs={12} md={6} controlId="companyName">
             <Form.Label>Company Name*</Form.Label>
             <Form.Control
               type="text"
@@ -175,7 +167,7 @@ const CreateBusinessForm = () => {
               onChange={(e) => setCompanyName(e.target.value)}
             />
           </Form.Group>
-          <Form.Group as={Col} controlId="location">
+          <Form.Group as={Col} xs={12} md={6} controlId="location">
             <Form.Label>Location*</Form.Label>
             <Form.Control
               type="text"
@@ -186,8 +178,8 @@ const CreateBusinessForm = () => {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} controlId="contactDetails">
-            <Form.Label>Contact Details*</Form.Label>
+          <Form.Group as={Col} xs={12} controlId="contactDetails">
+            <Form.Label>Contact Details</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter contact details"

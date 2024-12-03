@@ -25,13 +25,13 @@ const App = () => {
           <Container fluid>
           <img class=" img-logo" src="/logo.png " alt="Grow Business Corporation"></img>
 
-            <Navbar.Brand
+            {/* <Navbar.Brand
               as={Link}
               to="/home"
               className='nav-link'
             >
               Grow Business Corporation
-            </Navbar.Brand>
+            </Navbar.Brand> */}
             <Navbar.Toggle aria-controls="navbarScroll"  />
             <Navbar.Collapse id="navbarScroll">
               <Nav
