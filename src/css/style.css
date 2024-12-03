@@ -27,3 +27,8 @@
     display: inline-block; /* Ensure proper alignment */
     object-fit: contain; /* Makes sure the logo fits without distortion */
 }
+
+.imgmain{
+    height : 30%;
+    width : 20%;
+}

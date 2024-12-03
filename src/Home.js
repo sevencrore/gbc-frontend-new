@@ -9,19 +9,26 @@ import { color } from 'framer-motion';
 const Home = () => {
   return (
     <>
-      {/* Hero Section */}
       <div
         className="d-flex flex-column justify-content-center align-items-center text-center animate__animated animate__fadeIn"
         style={{
           minHeight: '100vh',
           backgroundImage:
-            'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://tse3.mm.bing.net/th?id=OIG3.WajEmVl1dtlBvBdAgCVd&pid=ImgGn")',
+            'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/background.jpeg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'white',
         }}
       >
+
         <Container>
+        <img
+            className="img-logo imgmain mb-5"
+            src="/logo.png"
+            alt="Grow Business Corporation"
+           
+          />
+
           <div className="p-5 rounded" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
             <h1 className="display-3 fw-bold animate__animated animate__bounceInDown text-shadow">
               Welcome to Grow Business Corporation
@@ -48,7 +55,7 @@ const Home = () => {
           <Col xs={12} md={12} className="mb-4">
             <Card className="shadow-sm">
               <Card.Body>
-                <h2 className="fw-bold text-center mb-3"style={{color:'#ff3333'}}>About Us</h2>
+                <h2 className="fw-bold text-center mb-3" style={{ color: '#ff3333' }}>About Us</h2>
                 <p style={{ textAlign: 'justify', lineHeight: 1.8 }}>
                   We specialize in helping businesses create strategies to effectively market their
                   products or services to other businesses. We provide expertise in understanding
@@ -60,33 +67,33 @@ const Home = () => {
               </Card.Body>
             </Card>
           </Col>
-          </Row>
+        </Row>
       </Container>
 
-          {/* Contact Section */}
-          {/* <Col xs={12} md={12}> */}
-            <Card className="shadow-sm text-white"style={{ backgroundColor: '#343a4b' }}>
-              <Card.Body>
-                <h3 className="fw-bold mb-3 text-center">Contact Us</h3>
-                <div className="mb-2 d-flex align-items-center justify-content-center">
-                  <p className="mb-0">Location: #60, 3rd Floor, Galaxy Mall, J C Nagar, Hubli-580021</p>
-                </div>
-                <div className="mb-2 d-flex align-items-center justify-content-center">
-                  <i className="bi bi-telephone-fill me-2"></i>
-                  <a href="tel:9880213311" className="text-white text-decoration-none">
-                    9880213311
-                  </a>
-                </div>
-                <div className="mb-0 d-flex align-items-center justify-content-center">
-                  <i className="bi bi-envelope-fill me-2"></i>
-                  <a href="mailto:grow24.co@gmail.com" className="text-white text-decoration-none">
-                    grow24.co@gmail.com
-                  </a>
-                </div>
-              </Card.Body>
-            </Card>
-          {/* </Col> */}
-        
+      {/* Contact Section */}
+      {/* <Col xs={12} md={12}> */}
+      <Card className="shadow-sm text-white" style={{ backgroundColor: '#343a4b' }}>
+        <Card.Body>
+          <h3 className="fw-bold mb-3 text-center">Contact Us</h3>
+          <div className="mb-2 d-flex align-items-center justify-content-center">
+            <p className="mb-0">Location: #60, 3rd Floor, Galaxy Mall, J C Nagar, Hubli-580021</p>
+          </div>
+          <div className="mb-2 d-flex align-items-center justify-content-center">
+            <i className="bi bi-telephone-fill me-2"></i>
+            <a href="tel:9880213311" className="text-white text-decoration-none">
+              9880213311
+            </a>
+          </div>
+          <div className="mb-0 d-flex align-items-center justify-content-center">
+            <i className="bi bi-envelope-fill me-2"></i>
+            <a href="mailto:grow24.co@gmail.com" className="text-white text-decoration-none">
+              grow24.co@gmail.com
+            </a>
+          </div>
+        </Card.Body>
+      </Card>
+      {/* </Col> */}
+
     </>
   );
 };
