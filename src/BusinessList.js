@@ -80,7 +80,7 @@ const BusinessList = () => {
       }
 
       try {
-        const url = `http://127.0.0.1:8000/api/business?page=${page}`;
+        const url = `${process.env.REACT_APP_HOST}/api/business?page=${page}`;
         const res = await axios.get(url, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -116,7 +116,7 @@ const BusinessList = () => {
     } else if (action === 'delete') {
       if (window.confirm('Are you sure you want to delete this business?')) {
         try {
-          const response = await axios.delete(`http://127.0.0.1:8000/api/business/delete/${business.id}`, {
+          const response = await axios.delete(`${process.env.REACT_APP_HOST}/api/business/delete/${business.id}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -151,7 +151,7 @@ const BusinessList = () => {
     }
 
     try {
-      const response = await axios.put(`http://127.0.0.1:8000/api/business/${currentBusiness.id}`, editedBusiness, {
+      const response = await axios.put(`${process.env.REACT_APP_HOST}/api/business/${currentBusiness.id}`, editedBusiness, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
