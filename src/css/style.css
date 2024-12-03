@@ -4,6 +4,7 @@
 
 .nav-link:hover {
     background-color: #ff3333;
+    color: #fff;
 }
 
 .navbar
@@ -12,4 +13,9 @@
 }
 .primary{
     background-color: #ff3333;
+}
+
+.navbar-brand
+{
+    color: #fff;
 }

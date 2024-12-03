@@ -26,7 +26,7 @@ const App = () => {
             <Navbar.Brand
               as={Link}
               to="/home"
-              
+              className='nav-link'
             >
               Grow Business Corporation
             </Navbar.Brand>
