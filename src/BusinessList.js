@@ -74,7 +74,7 @@ const BusinessList = () => {
     const fetchBusinesses = async () => {
       const token = localStorage.getItem('token');
       if (!token) {
-        alert('Please log in first.');
+        navigate('/home')
         setLoading(false);
         return;
       }
